@@ -1,0 +1,36 @@
+[push]
+        default = simple
+
+[core]
+        excludesfile = ~/.gitignore
+
+[help]
+        autocorrect = 5
+
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        pu = pull
+        root = !pwd
+        opendiff = difftool -d -t opendiff
+	uncommit   = reset --soft HEAD^
+	unstage    = reset HEAD
+	pending    = diff --cached
+	timeline = log --oneline --graph --decorate
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	gg = log --oneline --abbrev-commit --all --graph --decorate --color
+
+[user]
+        email = jharlap@gmail.com
+        name = Jonathan Harlap
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+
+[include]
+	path = ~/.gitconfig.local
+

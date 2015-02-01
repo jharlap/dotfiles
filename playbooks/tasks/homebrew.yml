@@ -1,0 +1,34 @@
+---
+- name: Update and upgrade Homebrew
+  shell: brew update && brew upgrade && brew cleanup
+
+- name: Install go with cross-compilation with Homebrew
+  homebrew: name=go state=latest install_options=with-cc-common
+
+- name: Install packages with Homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - apktool
+    - awscli
+    - axel
+    - bash-completion
+    - dcmtk
+    - forego
+    - git
+    - graphviz
+    - heroku-toolbelt
+    - imagemagick
+    - jq
+    - mercurial
+    - mongodb
+    - openssl
+    - nmap
+    - node
+    - redis
+    - s3cmd
+    - sqlite
+    - tmux
+    - unrar
+    - watch
+    - wget
+

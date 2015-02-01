@@ -1,0 +1,13 @@
+---
+- name: Install Go deps
+  shell: go get -u -v {{ item }}
+  with_items:
+    - github.com/nsf/gocode
+    - github.com/tools/godep
+    - github.com/golang/lint/golint
+    - github.com/kisielk/errcheck
+    - golang.org/x/tools/cmd/benchcmp
+    - golang.org/x/tools/cmd/godex
+    - golang.org/x/tools/cmd/goimports
+    - golang.org/x/tools/cmd/oracle
+
