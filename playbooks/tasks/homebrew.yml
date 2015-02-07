@@ -1,6 +1,15 @@
 ---
-- name: Update and upgrade Homebrew
-  shell: brew update && brew upgrade && brew cleanup
+# - name: Update and upgrade Homebrew
+#   shell: brew update && brew upgrade && brew cleanup
+
+- name: Enable Homebrew taps
+  homebrew_tap: tap={{ item }} state=present
+  with_items:
+    - homebrew/science
+    - Caskroom/cask
+
+- name: Update Homebrew
+  homebrew: update_homebrew=yes
 
 - name: Install go with cross-compilation with Homebrew
   homebrew: name=go state=latest install_options=with-cc-common
@@ -8,7 +17,9 @@
 - name: Install packages with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
+    - brew-cask
     - apktool
+    - ack
     - awscli
     - axel
     - bash-completion
@@ -21,9 +32,9 @@
     - jq
     - mercurial
     - mongodb
-    - openssl
     - nmap
     - node
+    - openssl
     - redis
     - s3cmd
     - sqlite
@@ -31,4 +42,13 @@
     - unrar
     - watch
     - wget
+
+- name: Install apps with Homebrew Cask
+  environment: { HOMEBREW_CASK_OPTS: "--appdir=/Applications" }
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - dash
+    - vagrant
+    - virtualbox
+    - xquartz
 
