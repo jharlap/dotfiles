@@ -17,24 +17,37 @@
 - name: Install packages with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
-    - brew-cask
-    - apktool
     - ack
+    - android-sdk
+    - ansible
+    - apktool
     - awscli
     - axel
     - bash-completion
+    - brew-cask
+    - cloc
+    - csv-fix
     - dcmtk
     - forego
     - git
+    - gradle
+    - grails
     - graphviz
+    - groovy
     - heroku-toolbelt
     - imagemagick
     - jq
+    - maven
     - mercurial
     - mongodb
+    - mysql
+    - netpbm
     - nmap
     - node
     - openssl
+    - p7zip
+    - pkg-config
+    - pngcrush
     - redis
     - s3cmd
     - sqlite
@@ -47,8 +60,32 @@
   environment: { HOMEBREW_CASK_OPTS: "--appdir=/Applications" }
   homebrew_cask: name={{ item }} state=present
   with_items:
+    - 1password
+    - acorn
+    - alfred
+    - arduino
+    - calibre
+    - cyberduck
     - dash
+    - expandrive
+    - firefox
+    - google-chrome
+    - google-earth
+    - insync
+    - intellij-idea
+    - java
+    - mou
+    - r
+    - rescuetime
+    - rstudio
+    - silverlight
+    - sizeup
+    - skype
+    - slack
+    - spotify
+    - sublime-text
+    - transmission
     - vagrant
     - virtualbox
+    - vlc
     - xquartz
-
