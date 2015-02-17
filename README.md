@@ -2,8 +2,9 @@
 
 ## Prerequisites
 
-1. Install Homebrew (`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`).
-2. Install Ansible (`brew install ansible`).
+1. Install oh-my-zsh (`curl -L http://install.ohmyz.sh | sh`)
+2. Install Homebrew (`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`).
+3. Install Ansible (`brew install ansible`).
 
 ## Installing
 
