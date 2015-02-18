@@ -12,7 +12,7 @@
   homebrew: update_homebrew=yes
 
 - name: Install go with cross-compilation with Homebrew
-  homebrew: name=go state=latest install_options=with-cc-common
+  homebrew: name=go state=latest install_options=with-cc-all
 
 - name: Install packages with Homebrew
   homebrew: name={{ item }} state=latest
